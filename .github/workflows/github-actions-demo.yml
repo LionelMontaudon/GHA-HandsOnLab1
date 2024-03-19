@@ -1,0 +1,27 @@
+name: GitHub Actions Demo
+on:
+  push:
+    branches: 
+      - main
+    paths-ignore: 
+      - '.github/**'
+  
+  pull_request:
+    branches: 
+      - main
+  
+  schedule:
+    - '15 6 * * 0'
+    
+  workflow_dispatch:
+
+jobs:
+  build:
+    name: My first job
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "${{ job.name }}"
+    
+    
+    
+    
